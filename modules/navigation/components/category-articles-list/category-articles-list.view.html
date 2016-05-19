@@ -1,0 +1,7 @@
+<div>
+<h4>Articles by Category</h4>
+	<ul ng-repeat="category in dataStore.allCategories |filter:{id:category}">
+	  <h5>{{ category.Name }}</h5>
+	  <li ng-repeat="article in dataStore.allArticles | filter: {Category_Id:category.id}"><a ng-href="article/{{article.Id}}">{{article.Title}}</a></li>
+	</ul>
+</div>
