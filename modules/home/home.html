@@ -1,0 +1,26 @@
+<div  class="sidebar">
+  	<feapp-articles-list></feapp-articles-list>
+  	<br>
+	<feapp-category-articles-list></feapp-category-articles-list>
+</div>
+
+<section class="wrap_sect">
+	<div class="container-fluid">
+		<div class="home_articles">
+		   <ul>			   
+			   <li ng-repeat="article in dataStore.allArticles | orderBy:sortArticle:true" >
+			  	 <div class="row">	
+					<div class="col-sm-3">
+					  <a  ng-href="article/{{article.Id}}" > <img src="{{(article.Image)?article.Image:'assets/img/dummy_project_img.png'}}" class="btnImg"  alt="dummy"/></a>
+					</div> 
+					<div class="col-md-9">
+						   <h2><a ng-href="article/{{article.Id}}">{{article.Title| limitTo: 50 }}{{article.Title.length > 50 ? '...' : ''}}</a></h2>
+						   <p>{{article.Body| limitTo: 350 }}{{article.Body.length > 350 ? '...' : ''}}</p>
+						   <p class="date-published">{{article.Date_Published}}</p>
+					</div>					
+				 </div>
+				</li> 			  		    
+	          </ul>			 
+		   </div>
+	  </div> 
+</section>
